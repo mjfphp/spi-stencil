@@ -16,6 +16,9 @@ export class SpiRoot {
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="spi-home" exact={true} />
             </stencil-route-switch>
+            <stencil-route-switch scrollTopOffset={0}>
+              <stencil-route url="/formations" component="spi-formations" exact={true} />
+            </stencil-route-switch>
           </stencil-router>
         </main>
       </div>

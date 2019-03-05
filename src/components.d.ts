@@ -9,9 +9,29 @@ import '@stencil/core';
 
 import '@stencil/router';
 import '@stencil/state-tunnel';
+import {
+  formation,
+} from './global/formations';
+import {
+  MatchResults,
+} from '@stencil/router';
 
 
 export namespace Components {
+
+  interface SpiFormation {
+    'formation': formation;
+  }
+  interface SpiFormationAttributes extends StencilHTMLAttributes {
+    'formation'?: formation;
+  }
+
+  interface SpiFormations {
+    'match': MatchResults;
+  }
+  interface SpiFormationsAttributes extends StencilHTMLAttributes {
+    'match'?: MatchResults;
+  }
 
   interface SpiHeader {}
   interface SpiHeaderAttributes extends StencilHTMLAttributes {}
@@ -25,17 +45,33 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'SpiFormation': Components.SpiFormation;
+    'SpiFormations': Components.SpiFormations;
     'SpiHeader': Components.SpiHeader;
     'SpiHome': Components.SpiHome;
     'SpiRoot': Components.SpiRoot;
   }
 
   interface StencilIntrinsicElements {
+    'spi-formation': Components.SpiFormationAttributes;
+    'spi-formations': Components.SpiFormationsAttributes;
     'spi-header': Components.SpiHeaderAttributes;
     'spi-home': Components.SpiHomeAttributes;
     'spi-root': Components.SpiRootAttributes;
   }
 
+
+  interface HTMLSpiFormationElement extends Components.SpiFormation, HTMLStencilElement {}
+  var HTMLSpiFormationElement: {
+    prototype: HTMLSpiFormationElement;
+    new (): HTMLSpiFormationElement;
+  };
+
+  interface HTMLSpiFormationsElement extends Components.SpiFormations, HTMLStencilElement {}
+  var HTMLSpiFormationsElement: {
+    prototype: HTMLSpiFormationsElement;
+    new (): HTMLSpiFormationsElement;
+  };
 
   interface HTMLSpiHeaderElement extends Components.SpiHeader, HTMLStencilElement {}
   var HTMLSpiHeaderElement: {
@@ -56,12 +92,16 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'spi-formation': HTMLSpiFormationElement
+    'spi-formations': HTMLSpiFormationsElement
     'spi-header': HTMLSpiHeaderElement
     'spi-home': HTMLSpiHomeElement
     'spi-root': HTMLSpiRootElement
   }
 
   interface ElementTagNameMap {
+    'spi-formation': HTMLSpiFormationElement;
+    'spi-formations': HTMLSpiFormationsElement;
     'spi-header': HTMLSpiHeaderElement;
     'spi-home': HTMLSpiHomeElement;
     'spi-root': HTMLSpiRootElement;

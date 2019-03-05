@@ -5,22 +5,17 @@ import { Component } from "@stencil/core";
   styleUrl: "spi-header.scss"
 })
 export class SpiHeader {
-  burger!: any;
-  menu!: any;
 
-  toggleBurger() {
-    console.log("quizz!!");
-    this.burger.classList.toggle("is-active");
-    this.menu.classList.toggle("is-active");
-  }
+
+
 
   render() {
     return (
       <nav class="navbar is-black" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="/">
+          <stencil-route-link class="navbar-item" url="/">
             <img src="/assets/icon/spi.png" width="120" height="40"/>
-          </a>
+          </stencil-route-link>
           <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -30,13 +25,14 @@ export class SpiHeader {
 
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item">
-              Formations
-            </a>
+            <stencil-route-link url='/formations' class="navbar-item">
 
-            <a class="navbar-item">
+              Formations
+            </stencil-route-link>
+
+            <stencil-route-link class="navbar-item" url="/candidats">
               Candidats
-            </a>
+            </stencil-route-link>
 
 
           </div>
