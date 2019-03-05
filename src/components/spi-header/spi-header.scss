@@ -1,9 +1,10 @@
 @import "../../../node_modules/bulma/sass/components/navbar.sass";
 @import "../../../node_modules/bulma/sass/elements/button.sass";
 
-.navbar-brand .navbar-item {
+ navbar-brand .navbar-item {
     font-size: 3.8em;
 }
+
 
 .navbar-menu .navbar-item {
     font-size: 2em;
@@ -16,7 +17,12 @@
 
 .navbar a {
     color: inherit; /* blue colors for links too */
+    font-family: "Keep Calm";
+   font-size:15px !important;
   }
+
 .navbar a:hover {
     color: $link;
 }
+
+

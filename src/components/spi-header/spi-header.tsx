@@ -16,52 +16,35 @@ export class SpiHeader {
 
   render() {
     return (
-      <nav
-        class="navbar is-light has-shadow is-spaced"
-        role="navigation"
-        aria-label="main navigation"
-      >
-        <div class="container">
-          <div class="navbar-brand">
-            <span class="navbar-item">
-              <strong>SPI-ADM</strong>
-            </span>
+      <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img src="/assets/icon/spi.png" width="120" height="40"/>
+          </a>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
 
-            <a
-              role="button"
-              class="navbar-burger burger"
-              aria-label="menu"
-              aria-expanded="false"
-              data-target="navbar-content"
-              onClick={() => this.toggleBurger()}
-              ref={el => (this.burger = el)}
-            >
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              Formations
             </a>
-          </div>
 
-          <div
-            id="navbar-content"
-            class="navbar-menu"
-            ref={el => (this.menu = el)}
-          >
-            <div class="navbar-start">
-              <span class="navbar-item">
-                <stencil-route-link url="/adm/" activeClass="none">
-                  <span class="has-text-primary">
-                    <i class="fas fa-tools" />
-                  </span>{" "}
-                  Formation
-                </stencil-route-link>
-              </span>
+            <a class="navbar-item">
+              Candidats
+            </a>
 
-            </div>
 
           </div>
+
+
         </div>
       </nav>
+
     );
   }
 }
