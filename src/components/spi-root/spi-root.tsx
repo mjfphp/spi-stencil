@@ -1,5 +1,5 @@
 import { Component } from "@stencil/core";
-import {MatchResults as _} from '@stencil/router'; // _ = !"declared but never read"
+//mport {MatchResults as _} from '@stencil/router'; // _ = !"declared but never read"
 
 @Component({
   tag: "spi-root",
@@ -15,9 +15,9 @@ export class SpiRoot {
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="spi-home" exact={true} />
-            </stencil-route-switch>
-            <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/formations" component="spi-formations" exact={true} />
+              <stencil-route url="/addFormation" component="spi-formation-add" exact={true} />
+              <stencil-route url="/DeleteFormation" component="spi-formation-add" exact={true} />
             </stencil-route-switch>
           </stencil-router>
         </main>

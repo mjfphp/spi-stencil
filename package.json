@@ -21,6 +21,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.7.2",
     "workbox-build": "3.4.1"
   }
 }

@@ -4,17 +4,22 @@ import { Component } from "@stencil/core";
 @Component({
   tag: "spi-home",
   styleUrl: "spi-home.scss",
+  shadow: true,
 })
 //  <h2 class="subtitle">Pour continuer veuillez-vous identifier.</h2>
+
 export class SpiHome {
+
   render() {
     return (
-      <div class="spi-home">
+
+      <div class="spi-home" id="spi-home">
         <div class="container is-large has-text-centered">
           <h1 class="title is-bold">Bienvenue sur l'interface du SPI !</h1>
 
         </div>
         <br/>
+
         <div class="columns">
           <div class="column is-one-third">
             <div class="card">
@@ -31,6 +36,7 @@ export class SpiHome {
                   <center> <stencil-route-link url='/formations'>
                     <button class="button is-danger">
                       FORMATIONS
+                      <i class="graduation-cap"></i>
                     </button>
                   </stencil-route-link>
                   </center>

@@ -1,4 +1,4 @@
-import {Component, Prop, State} from "@stencil/core";
+import {Component, Method, Prop, State} from "@stencil/core";
 import {formation} from "../../global/formations";
 
 @Component({
@@ -10,7 +10,16 @@ export class SpiFormation {
 
   @Prop() formation:formation;
   @State()  dd:string;
-
+  @Method()
+  /*supprimer(el)
+  {
+     console.log("#"+el);
+     let btn=document.getElementById("#"+el);
+      console.log(btn);
+      if(btn!=null){
+        btn.style.display="none";
+      }
+  }*/
   render() {
 
     if(this.formation.doubleDiplome=="0")
@@ -20,18 +29,19 @@ export class SpiFormation {
     else this.dd="Non";
 
     return (
-
+      <div>
          <div class="is-one-half">
         <nav class="panel">
           <br/>
+
       <p class="panel-heading">
-        {this.formation.codeFormation}
+        <strong> <center> {this.formation.nomFormation} </center> </strong>
       </p>
     <a class="panel-block is-active">
     <span class="panel-icon">
       <i class="fas fa-book" aria-hidden="true"></i>
     </span>
-          <strong>Nom : </strong>  &nbsp;{this.formation.nomFormation}
+          <strong>Code de Formation : </strong>  &nbsp;{this.formation.codeFormation}
     </a>
     <a class="panel-block">
     <span class="panel-icon">
@@ -64,21 +74,28 @@ export class SpiFormation {
       <strong>Diplome : </strong> &nbsp; {this.formation.diplome}
     </a>
       <a class="panel-block">
+
     <span class="panel-icon">
       <i class="fas fa-code-branch" aria-hidden="true"></i>
     </span>
-            <button class="button is-danger is-rounded  is-medium">
-              <span>delete</span>
+
+        <buttom class="button is-primary ">
+          <span>Modifier</span>
+          <span><i class="fas fa-trash-alt"></i></span>
+        </buttom>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="button is-danger   "  id={this.formation.codeFormation}  >
+             Suprrimer
+              <span class="icon has-text-danger">
+              <i class="fas fa-ban"></i>
+               </span>
             </button>
              &nbsp;
-            <buttom class="button is-primary is-rounded is-medium">
-              <span>Edit</span>
-
-            </buttom>
       </a>
   </nav>
-       </div>
+         </div>
 
+      </div>
     );
   }
 }

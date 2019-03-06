@@ -26,10 +26,8 @@ export class SpiHeader {
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
             <stencil-route-link url='/formations' class="navbar-item">
-
               Formations
             </stencil-route-link>
-
             <stencil-route-link class="navbar-item" url="/candidats">
               Candidats
             </stencil-route-link>

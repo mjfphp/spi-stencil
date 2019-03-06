@@ -8,7 +8,6 @@
 import '@stencil/core';
 
 import '@stencil/router';
-import '@stencil/state-tunnel';
 import {
   formation,
 } from './global/formations';
@@ -19,8 +18,14 @@ import {
 
 export namespace Components {
 
+  interface SpiFormationAdd {
+    'handleChangeNF': (event: any) => void;
+  }
+  interface SpiFormationAddAttributes extends StencilHTMLAttributes {}
+
   interface SpiFormation {
     'formation': formation;
+    'render': () => any;
   }
   interface SpiFormationAttributes extends StencilHTMLAttributes {
     'formation'?: formation;
@@ -45,6 +50,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'SpiFormationAdd': Components.SpiFormationAdd;
     'SpiFormation': Components.SpiFormation;
     'SpiFormations': Components.SpiFormations;
     'SpiHeader': Components.SpiHeader;
@@ -53,6 +59,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'spi-formation-add': Components.SpiFormationAddAttributes;
     'spi-formation': Components.SpiFormationAttributes;
     'spi-formations': Components.SpiFormationsAttributes;
     'spi-header': Components.SpiHeaderAttributes;
@@ -60,6 +67,12 @@ declare global {
     'spi-root': Components.SpiRootAttributes;
   }
 
+
+  interface HTMLSpiFormationAddElement extends Components.SpiFormationAdd, HTMLStencilElement {}
+  var HTMLSpiFormationAddElement: {
+    prototype: HTMLSpiFormationAddElement;
+    new (): HTMLSpiFormationAddElement;
+  };
 
   interface HTMLSpiFormationElement extends Components.SpiFormation, HTMLStencilElement {}
   var HTMLSpiFormationElement: {
@@ -92,6 +105,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'spi-formation-add': HTMLSpiFormationAddElement
     'spi-formation': HTMLSpiFormationElement
     'spi-formations': HTMLSpiFormationsElement
     'spi-header': HTMLSpiHeaderElement
@@ -100,6 +114,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'spi-formation-add': HTMLSpiFormationAddElement;
     'spi-formation': HTMLSpiFormationElement;
     'spi-formations': HTMLSpiFormationsElement;
     'spi-header': HTMLSpiHeaderElement;
