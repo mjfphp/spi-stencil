@@ -19,12 +19,24 @@ import {
 
 export namespace Components {
 
-  interface SpiFormationAdd {
-    'handleChangeNF': (event: any) => void;
+  interface SpiDeletef {
+    'delete': () => Promise<Response>;
     'history': RouterHistory;
+    'match': MatchResults;
+  }
+  interface SpiDeletefAttributes extends StencilHTMLAttributes {
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
+  }
+
+  interface SpiFormationAdd {
+    'componentWillLoad': () => Promise<void>;
+    'history': RouterHistory;
+    'match': MatchResults;
   }
   interface SpiFormationAddAttributes extends StencilHTMLAttributes {
     'history'?: RouterHistory;
+    'match'?: MatchResults;
   }
 
   interface SpiFormation {
@@ -54,6 +66,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'SpiDeletef': Components.SpiDeletef;
     'SpiFormationAdd': Components.SpiFormationAdd;
     'SpiFormation': Components.SpiFormation;
     'SpiFormations': Components.SpiFormations;
@@ -63,6 +76,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'spi-deletef': Components.SpiDeletefAttributes;
     'spi-formation-add': Components.SpiFormationAddAttributes;
     'spi-formation': Components.SpiFormationAttributes;
     'spi-formations': Components.SpiFormationsAttributes;
@@ -71,6 +85,12 @@ declare global {
     'spi-root': Components.SpiRootAttributes;
   }
 
+
+  interface HTMLSpiDeletefElement extends Components.SpiDeletef, HTMLStencilElement {}
+  var HTMLSpiDeletefElement: {
+    prototype: HTMLSpiDeletefElement;
+    new (): HTMLSpiDeletefElement;
+  };
 
   interface HTMLSpiFormationAddElement extends Components.SpiFormationAdd, HTMLStencilElement {}
   var HTMLSpiFormationAddElement: {
@@ -109,6 +129,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'spi-deletef': HTMLSpiDeletefElement
     'spi-formation-add': HTMLSpiFormationAddElement
     'spi-formation': HTMLSpiFormationElement
     'spi-formations': HTMLSpiFormationsElement
@@ -118,6 +139,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'spi-deletef': HTMLSpiDeletefElement;
     'spi-formation-add': HTMLSpiFormationAddElement;
     'spi-formation': HTMLSpiFormationElement;
     'spi-formations': HTMLSpiFormationsElement;

@@ -17,7 +17,8 @@ export class SpiRoot {
               <stencil-route url="/" component="spi-home" exact={true} />
               <stencil-route url="/formations" component="spi-formations" exact={true} />
               <stencil-route url="/addFormation" component="spi-formation-add" exact={true} />
-              <stencil-route url="/DeleteFormation" component="spi-formation-add" exact={true} />
+              <stencil-route url="/editFormation/:id" component="spi-formation-add" exact={true} />
+              <stencil-route url="/deleteF/:id" component="spi-deletef" exact={true} />
             </stencil-route-switch>
           </stencil-router>
         </main>

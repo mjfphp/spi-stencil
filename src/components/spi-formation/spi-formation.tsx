@@ -29,8 +29,9 @@ export class SpiFormation {
     else this.dd="Non";
 
     return (
-      <div>
-         <div class="is-one-half">
+      <div class="columns">
+        <div class="column is-one-fourth"></div>
+         <div class="column is-three-fifths">
         <nav class="panel">
           <br/>
 
@@ -84,17 +85,17 @@ export class SpiFormation {
           <span><i class="fas fa-trash-alt"></i></span>
         </stencil-route-link>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="button is-danger   "  id={this.formation.codeFormation}  >
+            <stencil-route-link url={"/deleteF/"+this.formation.codeFormation} class="button is-danger">
              Suprrimer
               <span class="icon has-text-danger">
               <i class="fas fa-ban"></i>
                </span>
-            </button>
+            </stencil-route-link>
              &nbsp;
       </a>
   </nav>
          </div>
-
+        <div class="column is-one-fourth"></div>
       </div>
     );
   }

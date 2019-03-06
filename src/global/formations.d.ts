@@ -1,9 +1,9 @@
 export interface formation {
   codeFormation: string;
-  debutAccreditation:Date;
+  debutAccreditation:string;
   diplome: string;
   doubleDiplome: string;
-  finAccreditation: Date;
+  finAccreditation: string;
   n0Annee:number,
   nomFormation: string
 }
