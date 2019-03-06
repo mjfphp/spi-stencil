@@ -1,5 +1,6 @@
-import {Component, Method, State} from "@stencil/core";
+import {Component, Method, Prop, State} from "@stencil/core";
 import {formation} from "../../global/formations";
+import {RouterHistory} from "@stencil/router";
 
 @Component({
   tag: "spi-formation-add",
@@ -12,43 +13,86 @@ import {formation} from "../../global/formations";
 
 export class SpiFormationAdd {
 
-  @State() nomF:string;
+
   @State() formation:formation=null;
+  @State() codeFormation: string;
+  @State() debutAccreditation:Date;
+  @State() diplome: string;
+  @State() doubleDiplome: string;
+  @State() finAccreditation: Date;
+  @State() n0Annee:number;
+  @State() nomFormation: string;
+  @Prop() history: RouterHistory;
   @Method()
 
   handleChangeNF(event){
-    this.nomF=event.target.value;
-    console.log(this.nomF)
+    this.nomFormation=event.target.value;
   }
   handleChangeCF(event){
-    this.formation.diplome=event.target.value;
+    this.codeFormation=event.target.value;
+    console.log(this.codeFormation)
   }
 
   handleChangeD(event){
-    this.formation.diplome=event.target.value;
+    this.diplome=event.target.value;
+    console.log(this.diplome)
   }
 
   handleChangeDD(event){
-    this.formation.doubleDiplome=event.target.value;
+    this.doubleDiplome=event.target.value;
+    console.log(this.doubleDiplome)
   }
 
   handleChangeDDA(event){
-    this.formation.debutAccreditation=event.target.value;
+    this.debutAccreditation=event.target.value;
   }
 
   handleChangeDFA(event){
-    this.formation.finAccreditation=event.target.value;
+    this.finAccreditation=event.target.value;
   }
 
   handleChangeNA(event){
-    this.formation.n0Annee=event.target.value;
+    this.n0Annee=event.target.value;
   }
+
+  vider(){
+    return this.history.replace("/");
+  }
+  submitter(){
+      let Datapost ={
+        codeFormation:this.codeFormation,
+        debutAccreditation:this.debutAccreditation,
+        nomFormation:this.nomFormation,
+        doubleDiplome:this.doubleDiplome,
+        n0Annee:this.n0Annee,
+        finAccreditation:this.finAccreditation,
+        diplome:this.diplome
+    };
+
+
+    let url="https://dosispi.cleverapps.io/formations";
+    return fetch(url, {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(Datapost), // body data type must match "Content-Type" header
+    })
+      .then(response =>
+        response.json()
+
+      );
+    };
+    send(){
+      console.log("submit");
+      this.submitter();
+      this.vider();
+      console.log("submit");
+    }
 
   render() {
     return(
       <div>
         <br/>
-        <center><strong class="tag is-black  is-large">Ajouter une foramtion</strong> &nbsp;
+        <center><strong class="tag is-danger is-large is-rounded"><span class="ajj">Ajouter une foramtion</span></strong> &nbsp;
         </center>
         <br/>
         <div class="columns">
@@ -92,16 +136,12 @@ export class SpiFormationAdd {
           <div class="column is-one-third">
             <div class="field">
               <strong>Double Diplome</strong> &nbsp;&nbsp;
-
-                <label class="radio">
-                  <input type="radio" name="question" onInput={(event) => this.handleChangeDD(event)} value="O"/>
-                  &nbsp;  Yes
-                </label>
-                <label class="radio">
-                  <input type="radio" name="question" onInput={(event) => this.handleChangeDD(event)} value="N"/>
-                    &nbsp; No
-                </label>
-
+              <div class="select" onInput={(event) => this.handleChangeDD(event)}>
+                <select>
+                  <option value="O">Oui</option>
+                  <option value="N">No</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
@@ -124,7 +164,7 @@ export class SpiFormationAdd {
             <div class="field">
               <label class="label">Date fin d'accreditation</label>
               <div class="control">
-                <input class="input" onInput={(event) => this.handleChangeDFA(event)} type="text" placeholder="numero annnee"/>
+                <input class="input" onInput={(event) => this.handleChangeDFA(event)} type="date" placeholder="numero annnee"/>
               </div>
             </div>
           </div>
@@ -147,7 +187,7 @@ export class SpiFormationAdd {
           <div class="column is-one-third">
             <div class="field is-grouped">
               <div class="control">
-                <button class="button is-link">Submit</button>
+                <button class="button is-link"  type="submit" onClick={()=>this.send()}>Submit</button>
               </div>
               <div class="control">
                 <stencil-route-link class="button is-text" url="/formations">Cancel</stencil-route-link>

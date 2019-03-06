@@ -9,19 +9,23 @@ import '@stencil/core';
 
 import '@stencil/router';
 import {
+  MatchResults,
+  RouterHistory,
+} from '@stencil/router';
+import {
   formation,
 } from './global/formations';
-import {
-  MatchResults,
-} from '@stencil/router';
 
 
 export namespace Components {
 
   interface SpiFormationAdd {
     'handleChangeNF': (event: any) => void;
+    'history': RouterHistory;
   }
-  interface SpiFormationAddAttributes extends StencilHTMLAttributes {}
+  interface SpiFormationAddAttributes extends StencilHTMLAttributes {
+    'history'?: RouterHistory;
+  }
 
   interface SpiFormation {
     'formation': formation;

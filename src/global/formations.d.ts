@@ -4,7 +4,7 @@ export interface formation {
   diplome: string;
   doubleDiplome: string;
   finAccreditation: Date;
-  "n0Annee":number,
-  "nomFormation": string
+  n0Annee:number,
+  nomFormation: string
 }
 

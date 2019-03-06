@@ -79,10 +79,10 @@ export class SpiFormation {
       <i class="fas fa-code-branch" aria-hidden="true"></i>
     </span>
 
-        <buttom class="button is-primary ">
+        <stencil-route-link url={"/editFormation/"+this.formation.codeFormation} class="button is-primary ">
           <span>Modifier</span>
           <span><i class="fas fa-trash-alt"></i></span>
-        </buttom>
+        </stencil-route-link>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="button is-danger   "  id={this.formation.codeFormation}  >
              Suprrimer
