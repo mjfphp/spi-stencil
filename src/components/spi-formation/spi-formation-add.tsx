@@ -145,9 +145,9 @@ export class SpiFormationAdd {
         <br/>
         <center><strong class="tag is-danger is-large is-rounded"><span class="ajj">{this.titre}</span></strong> &nbsp;
         </center>
-        <br/>
+        <br/><br/>
         <div class="columns">
-             <div class="column is-one-third"/>
+             <div class="column is-one-fifth"/>
              <div class="column is-one-third">
                <div class="field">
                  <label class="label">Nom de Formation</label>
@@ -157,10 +157,8 @@ export class SpiFormationAdd {
                  </div>
                </div>
              </div>
-        </div>
 
-        <div class="columns">
-          <div class="column is-one-third"/>
+
           <div class="column is-one-third">
             <div class="field">
               <label class="label">Code de Formation</label>
@@ -174,7 +172,7 @@ export class SpiFormationAdd {
         </div>
 
         <div class="columns">
-          <div class="column is-one-third"/>
+          <div class="column is-one-fifth"/>
           <div class="column is-one-third">
             <div class="field">
               <label class="label">Diplome</label>
@@ -184,25 +182,23 @@ export class SpiFormationAdd {
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="columns">
-          <div class="column is-one-third"/>
-          <div class="column is-one-third">
-            <div class="field">
-              <strong>Double Diplome</strong> &nbsp;&nbsp;
-              <div class="select" >
-                <select  id="select" onInput={(event) => this.handleChangeDD(event)}>
-                  <option value="O">Oui</option>
-                  <option value="N">No</option>
-                </select>
+
+            <div class="column is-one-third">
+              <div class="field">
+                <label class="label">Numero Anneee</label>
+                <div class="control">
+                  <input class="input" onInput={(event) => this.handleChangeNA(event)}
+                         type="number" placeholder="Date fin d'accreditation"/>
+                </div>
               </div>
             </div>
-          </div>
+
+
         </div>
 
         <div class="columns">
-          <div class="column is-one-third"/>
+          <div class="column is-one-fifth"/>
           <div class="column is-one-third">
             <div class="field">
               <label class="label">Date debut d'accreditation</label>
@@ -212,10 +208,7 @@ export class SpiFormationAdd {
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="columns">
-          <div class="column is-one-third"/>
           <div class="column is-one-third">
             <div class="field">
               <label class="label">Date fin d'accreditation</label>
@@ -228,21 +221,23 @@ export class SpiFormationAdd {
         </div>
 
         <div class="columns">
-          <div class="column is-one-third"/>
-          <div class="column is-one-third">
-            <div class="field">
-              <label class="label">Numero Anneee</label>
-              <div class="control">
-                <input class="input" onInput={(event) => this.handleChangeNA(event)}
-                        type="number" placeholder="Date fin d'accreditation"/>
-              </div>
+          <div class="column is-one-fifth"/>
+        <div class="column is-one-third">
+          <div class="field is-grouped">
+            <label class="label">Double Diplome</label> &nbsp;&nbsp;
+              <div class="select is-primary">
+              <select   onInput={(event) => this.handleChangeDD(event)}>
+                <option value="O">Oui</option>
+                <option value="N">No</option>
+              </select>
             </div>
           </div>
+
         </div>
 
-        <div class="columns">
-          <div class="column is-one-third"/>
+            <div class="column is-one-half"></div>
           <div class="column is-one-third">
+
             <div class="field is-grouped">
               <div class="control">
                 <button class="button is-link"  type="submit" onClick={()=>this.send()}>Submit</button>
@@ -252,10 +247,12 @@ export class SpiFormationAdd {
               </div>
             </div>
           </div>
+            <div class="column is-one-third"></div>
         </div>
-
-
       </div>
+
+
+
     )
   }
 }

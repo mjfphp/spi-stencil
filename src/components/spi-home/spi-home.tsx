@@ -44,6 +44,29 @@ export class SpiHome {
               </div>
             </div>
           </div>
+          <div class="column is-one-third">
+            <div class="card">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <center> <img src="/assets/image/profs.png" alt="Placeholder image" height="120" width="120"/> </center>
+                    </figure>
+                  </div>
+                </div>
+
+                <div class="content">
+                  <center> <stencil-route-link url='/profs'>
+                    <button class="button is-danger">
+                      ENSEIGNANTS
+                      <i class="graduation-cap"></i>
+                    </button>
+                  </stencil-route-link>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
