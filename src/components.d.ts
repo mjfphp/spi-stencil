@@ -30,6 +30,9 @@ export namespace Components {
     'match'?: MatchResults;
   }
 
+  interface SpiFooter {}
+  interface SpiFooterAttributes extends StencilHTMLAttributes {}
+
   interface SpiFormationAdd {
     'componentWillLoad': () => Promise<void>;
     'history': RouterHistory;
@@ -68,6 +71,7 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'SpiDeletef': Components.SpiDeletef;
+    'SpiFooter': Components.SpiFooter;
     'SpiFormationAdd': Components.SpiFormationAdd;
     'SpiFormation': Components.SpiFormation;
     'SpiFormations': Components.SpiFormations;
@@ -78,6 +82,7 @@ declare global {
 
   interface StencilIntrinsicElements {
     'spi-deletef': Components.SpiDeletefAttributes;
+    'spi-footer': Components.SpiFooterAttributes;
     'spi-formation-add': Components.SpiFormationAddAttributes;
     'spi-formation': Components.SpiFormationAttributes;
     'spi-formations': Components.SpiFormationsAttributes;
@@ -91,6 +96,12 @@ declare global {
   var HTMLSpiDeletefElement: {
     prototype: HTMLSpiDeletefElement;
     new (): HTMLSpiDeletefElement;
+  };
+
+  interface HTMLSpiFooterElement extends Components.SpiFooter, HTMLStencilElement {}
+  var HTMLSpiFooterElement: {
+    prototype: HTMLSpiFooterElement;
+    new (): HTMLSpiFooterElement;
   };
 
   interface HTMLSpiFormationAddElement extends Components.SpiFormationAdd, HTMLStencilElement {}
@@ -131,6 +142,7 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'spi-deletef': HTMLSpiDeletefElement
+    'spi-footer': HTMLSpiFooterElement
     'spi-formation-add': HTMLSpiFormationAddElement
     'spi-formation': HTMLSpiFormationElement
     'spi-formations': HTMLSpiFormationsElement
@@ -141,6 +153,7 @@ declare global {
 
   interface ElementTagNameMap {
     'spi-deletef': HTMLSpiDeletefElement;
+    'spi-footer': HTMLSpiFooterElement;
     'spi-formation-add': HTMLSpiFormationAddElement;
     'spi-formation': HTMLSpiFormationElement;
     'spi-formations': HTMLSpiFormationsElement;

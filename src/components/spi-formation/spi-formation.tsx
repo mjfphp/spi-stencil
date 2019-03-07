@@ -3,8 +3,7 @@ import {formation} from "../../global/formations";
 
 @Component({
   tag: "spi-formation",
-  styleUrl: "spi-formation.scss",
-  shadow:true
+  styleUrl: "spi-formation.scss"
 })
 export class SpiFormation {
 
@@ -45,15 +44,14 @@ export class SpiFormation {
           <strong>Code de Formation : </strong>  &nbsp;{this.formation.codeFormation}
     </a>
     <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
+
+     <i class="fas fa-table"></i> &nbsp;
+
        <strong> Debut Accreditation : </strong> &nbsp; {this.formation.debutAccreditation}
     </a>
     <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
+      <i class="fas fa-table"></i> &nbsp;
+
       <strong>Fin Accreditation</strong> &nbsp; {this.formation.finAccreditation}
     </a>
     <a class="panel-block">
@@ -76,20 +74,15 @@ export class SpiFormation {
     </a>
       <a class="panel-block">
 
-    <span class="panel-icon">
-      <i class="fas fa-code-branch" aria-hidden="true"></i>
-    </span>
+
 
         <stencil-route-link url={"/editFormation/"+this.formation.codeFormation} class="button is-primary ">
-          <span>Modifier</span>
-          <span><i class="fas fa-trash-alt"></i></span>
+          <span>Modifier</span>&nbsp;
+
         </stencil-route-link>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <stencil-route-link url={"/deleteF/"+this.formation.codeFormation} class="button is-danger">
-             Suprrimer
-              <span class="icon has-text-danger">
-              <i class="fas fa-ban"></i>
-               </span>
+            <stencil-route-link url={"/deleteF/"+this.formation.codeFormation} class="button is-danger ">
+              &nbsp;  Suprrimer <span><i class="fas fa-trash-alt"></i></span>
             </stencil-route-link>
              &nbsp;
       </a>

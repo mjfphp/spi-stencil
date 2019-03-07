@@ -2,7 +2,9 @@
 @import "../../../node_modules/bulma/sass/components/card";
 @import "../../../node_modules/bulma/sass/grid/columns";
 @import "../../../node_modules/bulma/sass/elements/button";
-
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 
 .spi-home .container {
     margin-top: 10vh

@@ -58,8 +58,7 @@ export class SpiHome {
                 <div class="content">
                   <center> <stencil-route-link url='/profs'>
                     <button class="button is-danger">
-                      ENSEIGNANTS
-                      <i class="graduation-cap"></i>
+                      <span> ENSEIGNANTS  </span>
                     </button>
                   </stencil-route-link>
                   </center>

@@ -22,6 +22,8 @@ export class SpiRoot {
             </stencil-route-switch>
           </stencil-router>
         </main>
+         <br/>
+        <spi-footer/>
       </div>
     );
   }
