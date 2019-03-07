@@ -16,10 +16,10 @@ export class SpiFormationAdd {
 
   @State() formation:formation=null;
   @State() codeFormation: string;
-  @State() debutAccreditation:Date;
+  @State() debutAccreditation:string;
   @State() diplome: string;
   @State() doubleDiplome: string;
-  @State() finAccreditation: Date;
+  @State() finAccreditation: string;
   @State() n0Annee:number;
   @State() nomFormation: string;
   @State() titre:string="ajouter une formation";
@@ -38,8 +38,13 @@ export class SpiFormationAdd {
         .then(response => response.json())
         .then(data => {
           this.formation = data;
-          console.log(document.querySelector("#select"))
-            //.value=this.formation.doubleDiplome;
+          this.codeFormation=this.formation.codeFormation;
+          this.finAccreditation=this.formation.finAccreditation;
+          this.nomFormation=this.formation.nomFormation;
+          this.diplome=this.formation.diplome;
+          this.doubleDiplome=this.formation.doubleDiplome;
+          this.n0Annee=this.formation.n0Annee;
+          this.debutAccreditation=this.formation.debutAccreditation;
         })
     }
   }
@@ -97,6 +102,7 @@ export class SpiFormationAdd {
       );
     };
   modifier(){
+
     let Datapost ={
       codeFormation:this.codeFormation,
       debutAccreditation:this.debutAccreditation,
@@ -132,7 +138,6 @@ export class SpiFormationAdd {
        {
          console.log("modifier")
          this.modifier();
-
        }
 
       this.vider();
@@ -153,7 +158,7 @@ export class SpiFormationAdd {
                  <label class="label">Nom de Formation</label>
                  <div class="control">
                    <input class="input" onInput={(event) => this.handleChangeNF(event)}
-                          type="text" placeholder="Nom de Formation"/>
+                       value={this.nomFormation}   type="text" placeholder="Nom de Formation"/>
                  </div>
                </div>
              </div>
@@ -164,7 +169,7 @@ export class SpiFormationAdd {
               <label class="label">Code de Formation</label>
               <div class="control">
                 <input class="input" onInput={(event) => this.handleChangeCF(event)}
-
+                       value={this.codeFormation}
                  type="text" placeholder="Code de Formation"/>
               </div>
             </div>
@@ -178,7 +183,7 @@ export class SpiFormationAdd {
               <label class="label">Diplome</label>
               <div class="control">
                 <input class="input" onInput={(event) => this.handleChangeD(event)} type="text"
-                        placeholder="Diplome"/>
+                       value={this.diplome} placeholder="Diplome"/>
               </div>
             </div>
           </div>
@@ -189,7 +194,7 @@ export class SpiFormationAdd {
                 <label class="label">Numero Anneee</label>
                 <div class="control">
                   <input class="input" onInput={(event) => this.handleChangeNA(event)}
-                         type="number" placeholder="Date fin d'accreditation"/>
+                        value={this.n0Annee}   type="number" placeholder="Date fin d'accreditation"/>
                 </div>
               </div>
             </div>
@@ -204,7 +209,7 @@ export class SpiFormationAdd {
               <label class="label">Date debut d'accreditation</label>
               <div class="control">
                 <input class="input" onInput={(event) => this.handleChangeDDA(event)}
-                      type="date" placeholder="Date debut d'accreditation"/>
+                    value={this.debutAccreditation}  type="date" placeholder="Date debut d'accreditation"/>
               </div>
             </div>
           </div>
@@ -214,7 +219,7 @@ export class SpiFormationAdd {
               <label class="label">Date fin d'accreditation</label>
               <div class="control">
                 <input class="input" onInput={(event) => this.handleChangeDFA(event)}
-                       type="date" placeholder="numero annnee"/>
+                     value={this.finAccreditation}  type="date" placeholder="numero annnee"/>
               </div>
             </div>
           </div>
