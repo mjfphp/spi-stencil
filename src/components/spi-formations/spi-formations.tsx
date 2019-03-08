@@ -10,7 +10,6 @@ import {formation} from "../../global/formations";
 export class SpiFormations {
 
   @State() formations:formation[] = [];
-  @State() elts:any;
   @Prop() match: MatchResults;
 
 

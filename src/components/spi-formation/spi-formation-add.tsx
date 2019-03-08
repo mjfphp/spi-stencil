@@ -113,7 +113,7 @@ export class SpiFormationAdd {
       diplome:this.diplome
     };
 
-    let url="https://dosispi.cleverapps.io/formations";
+    let url="https://dosispi.cleverapps.io/enseignants";
     return fetch(url, {
       method: "PUT", // *GET, POST, PUT, DELETE, etc.
       headers: {"Content-Type": "application/json"},
@@ -129,9 +129,10 @@ export class SpiFormationAdd {
   send(){
 
       console.log("send");
+
        if(this.method="add")
        {
-         console.log("add")
+         console.log("add");
          this.submitter();
        }
        else
@@ -150,7 +151,7 @@ export class SpiFormationAdd {
         <br/>
         <center><strong class="tag is-danger is-large is-rounded"><span class="ajj">{this.titre}</span></strong> &nbsp;
         </center>
-        <br/><br/>
+        <div class="box">
         <div class="columns">
              <div class="column is-one-fifth"/>
              <div class="column is-one-third">
@@ -175,7 +176,6 @@ export class SpiFormationAdd {
             </div>
           </div>
         </div>
-
         <div class="columns">
           <div class="column is-one-fifth"/>
           <div class="column is-one-third">
@@ -254,6 +254,7 @@ export class SpiFormationAdd {
           </div>
             <div class="column is-one-third"></div>
         </div>
+      </div>
       </div>
 
 

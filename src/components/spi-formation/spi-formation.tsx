@@ -35,7 +35,7 @@ export class SpiFormation {
           <br/>
 
       <p class="panel-heading">
-        <strong> <center> {this.formation.nomFormation} </center> </strong>
+        <strong> <center> <i class="fas fa-signature"></i> &nbsp; {this.formation.nomFormation} </center> </strong>
       </p>
     <a class="panel-block is-active">
     <span class="panel-icon">
@@ -62,13 +62,13 @@ export class SpiFormation {
     </a>
     <a class="panel-block">
     <span class="panel-icon">
-      <i class="fas fa-code-branch" aria-hidden="true"></i>
+      <i class="fas fa-certificate"></i>
     </span>
        <strong>Double Diplome :</strong> &nbsp; {this.dd}
     </a>
     <a class="panel-block">
     <span class="panel-icon">
-      <i class="fas fa-code-branch" aria-hidden="true"></i>
+      <i class="fas fa-certificate"></i>
     </span>
       <strong>Diplome : </strong> &nbsp; {this.formation.diplome}
     </a>
@@ -76,13 +76,16 @@ export class SpiFormation {
 
 
 
-        <stencil-route-link url={"/editFormation/"+this.formation.codeFormation} class="button is-primary ">
-          <span>Modifier</span>&nbsp;
-
+        <stencil-route-link url={"/editFormation/"+this.formation.codeFormation} >
+               <button class="button is-primary ">
+                 Modifier &nbsp;  <i class="fas fa-edit"></i>
+               </button>
         </stencil-route-link>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <stencil-route-link url={"/deleteF/"+this.formation.codeFormation} class="button is-danger ">
-              &nbsp;  Suprrimer <span><i class="fas fa-trash-alt"></i></span>
+        &nbsp;&nbsp;&nbsp;
+            <stencil-route-link url={"/deleteF/"+this.formation.codeFormation} >
+               <button class="button is-danger ">
+                Suprrimer   &nbsp;  <span><i class="fas fa-trash-alt"></i></span>
+               </button>
             </stencil-route-link>
              &nbsp;
       </a>

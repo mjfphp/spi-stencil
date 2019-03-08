@@ -64,6 +64,41 @@ export namespace Components {
   interface SpiHome {}
   interface SpiHomeAttributes extends StencilHTMLAttributes {}
 
+  interface SpiDeletep {
+    'componentWillLoad': () => Promise<void>;
+    'history': RouterHistory;
+    'match': MatchResults;
+  }
+  interface SpiDeletepAttributes extends StencilHTMLAttributes {
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
+  }
+
+  interface SpiProfAdd {
+    'componentWillLoad': () => Promise<void>;
+    'history': RouterHistory;
+    'match': MatchResults;
+  }
+  interface SpiProfAddAttributes extends StencilHTMLAttributes {
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
+  }
+
+  interface SpiProf {
+    'componentWillLoad': () => Promise<void>;
+    'match': MatchResults;
+  }
+  interface SpiProfAttributes extends StencilHTMLAttributes {
+    'match'?: MatchResults;
+  }
+
+  interface SpiProfs {
+    'match': MatchResults;
+  }
+  interface SpiProfsAttributes extends StencilHTMLAttributes {
+    'match'?: MatchResults;
+  }
+
   interface SpiRoot {}
   interface SpiRootAttributes extends StencilHTMLAttributes {}
 }
@@ -77,6 +112,10 @@ declare global {
     'SpiFormations': Components.SpiFormations;
     'SpiHeader': Components.SpiHeader;
     'SpiHome': Components.SpiHome;
+    'SpiDeletep': Components.SpiDeletep;
+    'SpiProfAdd': Components.SpiProfAdd;
+    'SpiProf': Components.SpiProf;
+    'SpiProfs': Components.SpiProfs;
     'SpiRoot': Components.SpiRoot;
   }
 
@@ -88,6 +127,10 @@ declare global {
     'spi-formations': Components.SpiFormationsAttributes;
     'spi-header': Components.SpiHeaderAttributes;
     'spi-home': Components.SpiHomeAttributes;
+    'spi-deletep': Components.SpiDeletepAttributes;
+    'spi-prof-add': Components.SpiProfAddAttributes;
+    'spi-prof': Components.SpiProfAttributes;
+    'spi-profs': Components.SpiProfsAttributes;
     'spi-root': Components.SpiRootAttributes;
   }
 
@@ -134,6 +177,30 @@ declare global {
     new (): HTMLSpiHomeElement;
   };
 
+  interface HTMLSpiDeletepElement extends Components.SpiDeletep, HTMLStencilElement {}
+  var HTMLSpiDeletepElement: {
+    prototype: HTMLSpiDeletepElement;
+    new (): HTMLSpiDeletepElement;
+  };
+
+  interface HTMLSpiProfAddElement extends Components.SpiProfAdd, HTMLStencilElement {}
+  var HTMLSpiProfAddElement: {
+    prototype: HTMLSpiProfAddElement;
+    new (): HTMLSpiProfAddElement;
+  };
+
+  interface HTMLSpiProfElement extends Components.SpiProf, HTMLStencilElement {}
+  var HTMLSpiProfElement: {
+    prototype: HTMLSpiProfElement;
+    new (): HTMLSpiProfElement;
+  };
+
+  interface HTMLSpiProfsElement extends Components.SpiProfs, HTMLStencilElement {}
+  var HTMLSpiProfsElement: {
+    prototype: HTMLSpiProfsElement;
+    new (): HTMLSpiProfsElement;
+  };
+
   interface HTMLSpiRootElement extends Components.SpiRoot, HTMLStencilElement {}
   var HTMLSpiRootElement: {
     prototype: HTMLSpiRootElement;
@@ -148,6 +215,10 @@ declare global {
     'spi-formations': HTMLSpiFormationsElement
     'spi-header': HTMLSpiHeaderElement
     'spi-home': HTMLSpiHomeElement
+    'spi-deletep': HTMLSpiDeletepElement
+    'spi-prof-add': HTMLSpiProfAddElement
+    'spi-prof': HTMLSpiProfElement
+    'spi-profs': HTMLSpiProfsElement
     'spi-root': HTMLSpiRootElement
   }
 
@@ -159,6 +230,10 @@ declare global {
     'spi-formations': HTMLSpiFormationsElement;
     'spi-header': HTMLSpiHeaderElement;
     'spi-home': HTMLSpiHomeElement;
+    'spi-deletep': HTMLSpiDeletepElement;
+    'spi-prof-add': HTMLSpiProfAddElement;
+    'spi-prof': HTMLSpiProfElement;
+    'spi-profs': HTMLSpiProfsElement;
     'spi-root': HTMLSpiRootElement;
   }
 
