@@ -149,7 +149,9 @@ export class SpiFormationAdd {
     return(
       <div>
         <br/>
-        <center><strong class="tag is-danger is-large is-rounded"><span class="ajj">{this.titre}</span></strong> &nbsp;
+        <center><strong class="tag is-link is-large is-rounded"><span class="ajj">{this.titre}</span></strong> &nbsp;
+        <br/>
+        <br/>
         </center>
         <div class="box">
         <div class="columns">
