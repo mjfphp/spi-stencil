@@ -20,6 +20,21 @@ import {
 
 export namespace Components {
 
+  interface SpiCandidat {
+    'componentWillLoad': () => Promise<void>;
+    'match': MatchResults;
+  }
+  interface SpiCandidatAttributes extends StencilHTMLAttributes {
+    'match'?: MatchResults;
+  }
+
+  interface SpiCandidats {
+    'match': MatchResults;
+  }
+  interface SpiCandidatsAttributes extends StencilHTMLAttributes {
+    'match'?: MatchResults;
+  }
+
   interface SpiDeletef {
     'delete': () => Promise<Response>;
     'history': RouterHistory;
@@ -105,6 +120,8 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'SpiCandidat': Components.SpiCandidat;
+    'SpiCandidats': Components.SpiCandidats;
     'SpiDeletef': Components.SpiDeletef;
     'SpiFooter': Components.SpiFooter;
     'SpiFormationAdd': Components.SpiFormationAdd;
@@ -120,6 +137,8 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'spi-candidat': Components.SpiCandidatAttributes;
+    'spi-candidats': Components.SpiCandidatsAttributes;
     'spi-deletef': Components.SpiDeletefAttributes;
     'spi-footer': Components.SpiFooterAttributes;
     'spi-formation-add': Components.SpiFormationAddAttributes;
@@ -134,6 +153,18 @@ declare global {
     'spi-root': Components.SpiRootAttributes;
   }
 
+
+  interface HTMLSpiCandidatElement extends Components.SpiCandidat, HTMLStencilElement {}
+  var HTMLSpiCandidatElement: {
+    prototype: HTMLSpiCandidatElement;
+    new (): HTMLSpiCandidatElement;
+  };
+
+  interface HTMLSpiCandidatsElement extends Components.SpiCandidats, HTMLStencilElement {}
+  var HTMLSpiCandidatsElement: {
+    prototype: HTMLSpiCandidatsElement;
+    new (): HTMLSpiCandidatsElement;
+  };
 
   interface HTMLSpiDeletefElement extends Components.SpiDeletef, HTMLStencilElement {}
   var HTMLSpiDeletefElement: {
@@ -208,6 +239,8 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'spi-candidat': HTMLSpiCandidatElement
+    'spi-candidats': HTMLSpiCandidatsElement
     'spi-deletef': HTMLSpiDeletefElement
     'spi-footer': HTMLSpiFooterElement
     'spi-formation-add': HTMLSpiFormationAddElement
@@ -223,6 +256,8 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'spi-candidat': HTMLSpiCandidatElement;
+    'spi-candidats': HTMLSpiCandidatsElement;
     'spi-deletef': HTMLSpiDeletefElement;
     'spi-footer': HTMLSpiFooterElement;
     'spi-formation-add': HTMLSpiFormationAddElement;

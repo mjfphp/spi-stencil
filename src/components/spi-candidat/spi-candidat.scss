@@ -1,0 +1,28 @@
+@import "../../../node_modules/bulma/sass/components/navbar.sass";
+@import "../../../node_modules/bulma/sass/components/tabs";
+@import "../../../node_modules/bulma/sass/elements/button.sass";
+@import "../../../node_modules/bulma/sass/elements/icon";
+@import "../../../node_modules/bulma/sass/elements/table";
+@import "../../../node_modules/bulma/sass/elements/tag";
+@import "../../../node_modules/bulma/sass/elements/title";
+@import "../../../node_modules/bulma/sass/elements/form";
+@import "../../../node_modules/bulma/sass/elements/box";
+@import "../../../node_modules/bulma/sass/grid/columns";
+@import "../../../node_modules/bulma/sass/layout/hero";
+@import "../../../node_modules/bulma/sass/components/card";
+
+
+.colour{
+  color: black !important;
+}
+ span{
+   font-size: 20px;
+ }
+
+ .add{
+   color : white !important;
+ }
+
+ stencil-route-link{
+   color:white;
+ }
