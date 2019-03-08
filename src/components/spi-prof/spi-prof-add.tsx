@@ -181,9 +181,13 @@ export class SpiProfAdd {
         <center><strong class="tag is-danger is-large is-rounded"><span class="ajj">{this.titre}</span></strong> &nbsp;
         </center>
         <br/><br/>
-        <div class="columns">
-          <div class="column is-6 is-offset-3">
+
+
             <div class="box">
+
+              <div class="columns">
+                <div class="column is-one-fifth"/>
+                <div class="column is-one-third">
           <div class="field">
             <label class="label">Nom </label>
             <div class="control">
@@ -191,6 +195,8 @@ export class SpiProfAdd {
                      onInput={(event) => this.handleChangeNom(event)} value={this.nom}  />
             </div>
           </div>
+                </div>
+                <div class="column is-one-third">
           <div class="field">
             <label class="label">Prénom </label>
             <div class="control">
@@ -199,7 +205,14 @@ export class SpiProfAdd {
                      value={this.prenom}/>
             </div>
           </div>
+                </div>
+              </div>
 
+
+
+              <div class="columns">
+                <div class="column is-one-fifth"/>
+                <div class="column is-one-third">
           <div class="field">
             <label class="label ">Email de Ubo </label>
             <div class="control has-icons-left">
@@ -208,7 +221,8 @@ export class SpiProfAdd {
                      value={this.emailUbo}/>
             </div>
           </div>
-
+                </div>
+                <div class="column is-one-third">
           <div class="field">
             <label class="label">Numéro de téléphone</label>
             <div class="control">
@@ -217,6 +231,13 @@ export class SpiProfAdd {
                      value={this.telephone} placeholder="Enter le numéro de téléphone"  />
             </div>
           </div>
+                </div>
+              </div>
+
+
+        <div class="columns">
+          <div class="column is-one-fifth"/>
+          <div class="column is-one-third">
 
           <div class="field">
             <label class="label ">Adresse de l'enseignant</label>
@@ -226,15 +247,22 @@ export class SpiProfAdd {
                      value={this.adresse} placeholder="Enter l'adresse'de l'enseignant" name="adresse" />
             </div>
           </div>
-
-          <div class="field">
+          </div>
+            <div class="column is-one-third">
+            <div class="field">
             <label class="label ">Code postale </label>
             <div class="control">
               <input class="input" type="text"
                      value={this.codePostal}  onInput={(event) => this.handleChangeCP(event)} placeholder="Enter code postale" name="codePostal"  />
             </div>
           </div>
+            </div>
+          </div>
 
+
+        <div class="columns">
+          <div class="column is-one-fifth"/>
+          <div class="column is-one-third">
           <div class="field">
             <label class="label">Ville </label>
             <div class="control">
@@ -242,7 +270,8 @@ export class SpiProfAdd {
                      value={this.ville}   onInput={(event) => this.handleChangeV(event)} placeholder="Enter code postale"   />
             </div>
           </div>
-
+          </div>
+          <div class="column is-one-third">
           <div class="field">
             <label class="label ">Pays </label>
             <div class="control">
@@ -250,23 +279,28 @@ export class SpiProfAdd {
                      value={this.pays}  onInput={(event) => this.handleChangeP(event)} placeholder="Enter le pays" name="codePostal"  />
             </div>
           </div>
+          </div>
+        </div>
 
+           <center>
+             <div class="columns">
+               <div class="column is-one-third"/>
+               <div class="column is-one-third">
           <div class="field is-grouped has-text-centered">
             <div class="control">
                 <button type="submit" class="button is-success" onClick={()=>this.send()}>
-                     <span class="icon">
-                       <i class="fas fa-plus"></i>
-                     </span>
-                  <span> submit </span></button>
+                       <i class="fas fa-plus"></i> &nbsp; submit</button>
         </div>
             <div class="control">
               <stencil-route-link class="button is-text" url="/profs">Cancel</stencil-route-link>
             </div>
       </div>
-        </div>
-          </div>
+               </div>
+             </div>
+           </center>
         </div>
       </div>
+
     )
           }
           }
