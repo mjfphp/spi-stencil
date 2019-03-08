@@ -4,7 +4,7 @@ import {MatchResults, RouterHistory} from "@stencil/router";
 
 @Component({
   tag: "spi-deletef",
-  styleUrl: "spi-deletef.scss",
+  styleUrl: "spi-deleteF.scss",
   shadow:true
 })
 
