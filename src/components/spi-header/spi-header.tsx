@@ -31,6 +31,9 @@ export class SpiHeader {
             <stencil-route-link class="navbar-item" url="/profs">
               <i class="fas fa-users"></i> Enseignants
             </stencil-route-link>
+            <stencil-route-link class="navbar-item" url="/candidats">
+              <i class="fas fa-user-graduate"></i> candidats
+            </stencil-route-link>
 
 
           </div>

@@ -22,7 +22,7 @@ export class SpiFormationAdd {
   @State() finAccreditation: string;
   @State() n0Annee:number;
   @State() nomFormation: string;
-  @State() titre:string="ajouter une formation";
+  @State() titre:string=" ajouter une formation";
   @Prop() history: RouterHistory;
   @Prop() match: MatchResults;
   @State() method:string="add";
@@ -149,7 +149,10 @@ export class SpiFormationAdd {
     return(
       <div>
         <br/>
-        <center><strong class="tag is-link is-large is-rounded"><span class="ajj">{this.titre}</span></strong> &nbsp;
+        <center><strong class="tag is-link is-large is-rounded"><span class="ajj">
+          {this.method==="add"?<i class="far fa-plus-square"></i>:<i class="fas fa-edit"></i>}
+          {this.titre}
+          </span></strong> &nbsp;
         <br/>
         <br/>
         </center>

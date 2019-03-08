@@ -20,6 +20,16 @@ import {
 
 export namespace Components {
 
+  interface SpiCandidatAdd {
+    'componentWillLoad': () => Promise<void>;
+    'history': RouterHistory;
+    'match': MatchResults;
+  }
+  interface SpiCandidatAddAttributes extends StencilHTMLAttributes {
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
+  }
+
   interface SpiCandidat {
     'componentWillLoad': () => Promise<void>;
     'match': MatchResults;
@@ -120,6 +130,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'SpiCandidatAdd': Components.SpiCandidatAdd;
     'SpiCandidat': Components.SpiCandidat;
     'SpiCandidats': Components.SpiCandidats;
     'SpiDeletef': Components.SpiDeletef;
@@ -137,6 +148,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'spi-candidat-add': Components.SpiCandidatAddAttributes;
     'spi-candidat': Components.SpiCandidatAttributes;
     'spi-candidats': Components.SpiCandidatsAttributes;
     'spi-deletef': Components.SpiDeletefAttributes;
@@ -153,6 +165,12 @@ declare global {
     'spi-root': Components.SpiRootAttributes;
   }
 
+
+  interface HTMLSpiCandidatAddElement extends Components.SpiCandidatAdd, HTMLStencilElement {}
+  var HTMLSpiCandidatAddElement: {
+    prototype: HTMLSpiCandidatAddElement;
+    new (): HTMLSpiCandidatAddElement;
+  };
 
   interface HTMLSpiCandidatElement extends Components.SpiCandidat, HTMLStencilElement {}
   var HTMLSpiCandidatElement: {
@@ -239,6 +257,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'spi-candidat-add': HTMLSpiCandidatAddElement
     'spi-candidat': HTMLSpiCandidatElement
     'spi-candidats': HTMLSpiCandidatsElement
     'spi-deletef': HTMLSpiDeletefElement
@@ -256,6 +275,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'spi-candidat-add': HTMLSpiCandidatAddElement;
     'spi-candidat': HTMLSpiCandidatElement;
     'spi-candidats': HTMLSpiCandidatsElement;
     'spi-deletef': HTMLSpiDeletefElement;

@@ -31,7 +31,7 @@ export class SpiCandidats {
 
         <div class="columns">
           <div class="column is-one-fourth">
-        <stencil-route-link url="/addProf" class="button is-link is-rounded ">
+        <stencil-route-link url="/candidatAdd" class="button is-link is-rounded ">
 
           <span class="add"><i class="fas fa-plus"></i> Ajouter un Candidat </span>
         </stencil-route-link>
@@ -80,7 +80,7 @@ export class SpiCandidats {
                       </stencil-route-link>
                  </span>
                  <span class="card-footer-item">
-                    <stencil-route-link url={"/candidat/"+prof.noCandidat}>
+                    <stencil-route-link url={"/candidatAdd/"+prof.noCandidat}>
                       <button class="button is-primary"> <i class="fas fa-edit"></i> &nbsp; modifier </button>
                     </stencil-route-link>
                  </span>
